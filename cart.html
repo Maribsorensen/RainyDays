@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Review and finalize your order with Rainydays. 
+      Your shopping cart contains carefully selected sustainable hiking gear. 
+      Enjoy a seamless checkout experience and embark on your next adventure with eco-friendly products."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rainydays | Your cart</title>
+    <link rel="icon" type="image/png" href="assets/images/logo-non.png" />
+    <link rel="stylesheet" href="src/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <input type="checkbox" id="checkbox-menu" />
+      <label for="checkbox-menu" class="hamburger-icon"
+        >&#9776;<i class="hamburger-bars"></i
+      ></label>
+      <a href="index.html" class="header-logo-link">
+        <div class="head-logo">RAINYDAYS</div>
+      </a>
+      <nav class="header-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html" class="current">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a href="cart.html" class="cart-icon-box">
+        <img
+          class="cart-icon"
+          src="assets/images/cart-outline.png"
+          alt="cart icon"
+        />
+      </a>
+    </header>
+    <main>
+      <section>
+        <div class="cart-container">
+          <h1>Cart checkout</h1>
+          <div class="cart-border">
+            <div class="cart-jacket-box">
+              <img
+                class="fridarunner-img"
+                src="assets/images/RainyDays_Jacket2.jpg"
+                alt="Picture of Frida Runner jacket"
+              />
+            </div>
+            <div class="cart-info">
+              <h2 class="cart-content">Frida Runner</h2>
+              <h3 class="cart-content">Size: Medium</h3>
+            </div>
+            <form class="cart-qty">
+              <label for="qty" class="cart-form-content">Quantity</label>
+              <select name="qty" id="qty" class="cart-form-content">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </form>
+            <p class="cart-price">799,-</p>
+            <div class="cart-remove">
+              <a href="temp.html">
+                <img
+                  class="cart-remove-icon"
+                  src="assets/images/remove-icon.png"
+                  alt="Remove content in shopping cart"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="cart-border-subtotal">
+            <h4 class="subtotal">Subtotal:</h4>
+            <h5 class="subtotal-price">799,-</h5>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="cart-form-box">
+          <form class="cart-form">
+            <div class="cart-form-container">
+              <h2>Contact information</h2>
+              <label for="name" class="labels">Name</label>
+              <input type="text" name="name" id="name" class="input-box" />
+              <label for="email" class="labels">Email adress</label>
+              <input type="email" name="email" id="email" class="input-box" />
+              <label for="number" class="labels">Phone number</label>
+              <input
+                type="number"
+                name="number"
+                id="number"
+                class="input-box"
+              />
+            </div>
+            <div class="cart-form-container">
+              <h2>Shipping address</h2>
+              <label for="address" class="labels">Street address</label>
+              <input
+                type="text"
+                name="address"
+                id="address"
+                class="input-box"
+              />
+              <label for="postal" class="labels">Postal code</label>
+              <input type="text" name="postal" id="postal" class="input-box" />
+              <label for="country" class="labels">Country</label>
+              <input
+                type="text"
+                name="country"
+                id="country"
+                class="input-box"
+              />
+            </div>
+            <div class="cart-form-container">
+              <h2>Card information</h2>
+              <label for="card-name" class="labels">Card holder name</label>
+              <input
+                type="text"
+                name="card-name"
+                id="card-name"
+                class="input-box"
+              />
+              <label for="card-number" class="labels">Card number</label>
+              <input
+                type="text"
+                name="card-number"
+                id="card-number"
+                class="input-box"
+              />
+              <label for="date" class="labels">Expiery date</label>
+              <input type="text" name="date" id="date" class="input-box" />
+              <label for="pvc" class="labels">PVC</label>
+              <input type="text" name="pvc" id="pvc" class="input-box" />
+            </div>
+          </form>
+          <form action="checkoutsuccess.html" class="form-button-box">
+            <button class="form-button">Confirm purchase</button>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-nav">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="temp.html">FAQ</a>
+      </div>
+      <form action="temp.html" class="footer-form">
+        <label for="subscribe" class="footer-form-attributes">Email</label>
+        <input
+          type="email"
+          id="subscribe"
+          name="subscribe"
+          class="footer-form-attributes"
+          required
+        />
+        <button class="club-button">Join our customer club</button>
+      </form>
+      <div class="footer-logo-section">
+        <img
+          class="footer-logo"
+          src="assets/images/Logo,_seethrough_.png"
+          alt="Rainydays mountain logo"
+        />
+        <div class="footer-follow">Find us here</div>
+        <div class="footer-socials-box">
+          <img
+            class="footer-socials"
+            src="assets/images/Facebook-logo.png"
+            alt="Facebook logo"
+          />
+          <img
+            class="footer-socials"
+            src="assets/images/Youtube-logo.png"
+            alt="Youtube logo"
+          />
+          <img
+            class="footer-socials"
+            src="assets/images/Instagram-logo.png"
+            alt="Instagram logo"
+          />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
