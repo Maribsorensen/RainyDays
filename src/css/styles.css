@@ -298,9 +298,6 @@ h1 {
 .jacket-page-link:hover {
   text-decoration: underline;
 }
-/* .shop-page-boxes {
-  text-align: center;
-} */
 .shop-jacket-img {
   width: 100%;
   height: auto;
@@ -319,17 +316,22 @@ h1 {
   font-size: 1.2rem;
   color: #000;
 }
-@media (max-width: 1070px) {
-  .shop-page-boxes {
-    flex-basis: 300px;
-  }
+@media (max-width: 1333px) {
   .shop-page-content {
-    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 1333px) {
+  .shop-page-content {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 768px) {
-  .shop-page-boxes {
-    flex-basis: 150px;
+  .jacket-info-1 {
+    font-size: 1.2rem;
+  }
+  .jacket-info-2 {
+    font-size: 1rem;
   }
 }
 

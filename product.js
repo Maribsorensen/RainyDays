@@ -44,7 +44,6 @@ function createJacketImageAndInformationSection(jacket) {
   jacketImage.classList.add("fridarunner-img");
   jacketImage.src = jacket.image;
   jacketImageBox.appendChild(jacketImage);
-  // why not append the div??
 
   const jacketInformationBox = document.createElement("div");
   jacketInformationBox.classList.add("fridarunner-information-box");
@@ -74,4 +73,8 @@ async function generateJacketHTML() {
   document.querySelector("main").appendChild(jacketImageAndInformationSection);
 }
 
+
+
 generateJacketHTML();
+
+{/* <button class="add-button">Add to cart</button> */ }

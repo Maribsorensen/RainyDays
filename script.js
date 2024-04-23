@@ -1,7 +1,7 @@
 // https://api.noroff.dev/api/v1/rainy-days
 
 async function fetchJackets() {
-  // showLoadingIndicator();
+  showLoadingIndicator();
   const response = await fetch("https://api.noroff.dev/api/v1/rainy-days")
   const data = await response.json();
   return data;
@@ -10,7 +10,7 @@ async function fetchJackets() {
 
 function showLoadingIndicator() {
   const jacketContainer = document.getElementById("product-cards-wrapper");
-  jacketContainer.innerHTML = "<p>Finding Jackets</p>"
+  jacketContainer.innerHTML = "<p>Finding Jackets...</p>"
 }
 
 
