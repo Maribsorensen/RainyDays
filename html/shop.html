@@ -4,16 +4,15 @@
     <meta charset="UTF-8" />
     <meta
       name="description"
-      content="Introducing the Frida Runner by Rainydays. 
-      Elevate your outdoor experience with this sustainable hiking jacket, 
-      crafted for performance and eco-conscious adventurers. Weather-resistant, 
-      breathable, and stylish. Discover the perfect companion for your next adventure."
+      content="Discover our eco-friendly jackets. These sustainable hiking 
+    jackets combines style with high-performance features for your outdoor adventures. 
+    Elevate your gear and embrace sustainable exploration."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rainydays | Frida Runner</title>
+    <title>Rainydays | Find your jacket here</title>
     <link rel="icon" type="image/png" href="../assets/images/logo-non.png" />
     <link rel="stylesheet" href="../src/css/styles.css" />
-    <script src="../scripts/product.mjs" type="module"></script>
+    <script src="../scripts/script.mjs" type="module"></script>
   </head>
   <body>
     <header>
@@ -26,10 +25,10 @@
       </a>
       <nav class="header-nav">
         <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../html/shop.html" class="current">Shop</a></li>
-          <li><a href="../html/about.html">About</a></li>
-          <li><a href="../html/contact.html">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html" class="current">Shop</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <a href="../checkout/index.html" class="cart-icon-box">
@@ -40,14 +39,34 @@
         />
       </a>
     </header>
-    <main class="loading-indicator"></main>
+    <main>
+      <section>
+        <div>
+          <h1>Our Jackets</h1>
+        </div>
+      </section>
+      <div class="filter-menu">
+        <label for="genderFilter">Filter by gender:</label>
+        <select name="" id="genderFilter" class="filter-dropdown">
+          <option value="all">All</option>
+          <option value="Female">Women's</option>
+          <option value="Male">Men's</option>
+        </select>
+      </div>
+      <section
+        class="shop-page-content loading-indicator"
+        id="product-cards-wrapper"
+      >
+        <!-- Product cards appended here -->
+      </section>
+    </main>
     <footer>
       <div class="footer-nav">
-        <a href="../html/about.html">About</a>
-        <a href="../html/contact.html">Contact</a>
-        <a href="../html/temp.html">FAQ</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="temp.html">FAQ</a>
       </div>
-      <form action="../html/temp.html" class="footer-form">
+      <form action="temp.html" class="footer-form">
         <label for="subscribe" class="footer-form-attributes">Email</label>
         <input
           type="email"
