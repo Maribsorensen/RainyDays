@@ -44,7 +44,7 @@ function createCartMainBorder(jacket) {
   cartInformation.appendChild(jacketTitle);
   cartMainBorder.appendChild(imageContainer);
   cartMainBorder.appendChild(cartInformation);
-  cartMainBorder.appendChild(jacketPrice); // Append jacketPrice directly to cartMainBorder
+  cartMainBorder.appendChild(jacketPrice);
 
   return cartMainBorder;
 }
@@ -57,8 +57,8 @@ function createCartSubtotalBorder(jackets) {
   subtotal.textContent = "Subtotal";
 
   const subtotalPrice = document.createElement("h5");
-  subtotalPrice.className = "subtotal-price"; // Correct class name here
-  subtotalPrice.textContent = "test"; // You may want to calculate subtotal dynamically here
+  subtotalPrice.className = "subtotal-price";
+  subtotalPrice.textContent = "test";
 
   subtotalBorder.appendChild(subtotal);
   subtotalBorder.appendChild(subtotalPrice);
@@ -66,7 +66,7 @@ function createCartSubtotalBorder(jackets) {
   return subtotalBorder;
 }
 
-function generateCartHTML() {
+export function generateCartHTML() {
   const jackets = JSON.parse(localStorage.getItem("cart")) || [];
   const cartContainer = document.querySelector(".cart-container");
 

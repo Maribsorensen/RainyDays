@@ -84,7 +84,9 @@ async function generateJacketHTML() {
 
   document.querySelector("main").append(jacketHeaderSection, jacketImageAndInformationSection);
   document.querySelector("main").appendChild(jacketImageAndInformationSection);
+
 }
+
 
 
 
