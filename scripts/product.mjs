@@ -1,17 +1,24 @@
+import { fetchJackets } from "./utils/fetch.mjs";
+
 function getJacketId() {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get("id");
 }
 
 async function fetchJacketInformation() {
-  // showLoadingIndicator();
   const jacketId = getJacketId();
   if (!jacketId) {
     return;
   }
-  const response = await fetch(`https://api.noroff.dev/api/v1/rainy-days/${jacketId}`);
-  const jacketInformation = response.json();
-  return jacketInformation;
+
+  try {
+    const jackets = await fetchJackets();
+    const specificJacket = jackets.find(jacket => jacket.id === jacketId);
+    return specificJacket;
+  } catch (error) {
+    console.error("Error fetching jacket information:", error);
+    return null;
+  }
 }
 
 function createJacketHeaderSection(jacket) {
@@ -51,15 +58,20 @@ function createJacketImageAndInformationSection(jacket) {
   const jacketInformationHeaderAbout = document.createElement("h2");
   jacketInformationHeaderAbout.classList.add("fr-headers");
   jacketInformationHeaderAbout.textContent = "About the jacket";
-  jacketInformationBox.appendChild(jacketInformationHeaderAbout);
 
   const jacketInformationParagraph = document.createElement("p");
   jacketInformationParagraph.classList.add("fridarunner-information");
   jacketInformationParagraph.textContent = jacket.description;
-  jacketInformationBox.appendChild(jacketInformationParagraph);
 
-  informationSection.appendChild(jacketImageBox);
-  informationSection.appendChild(jacketInformationBox);
+  const addToCartButton = document.createElement("button");
+  addToCartButton.classList.add("add-button");
+  addToCartButton.textContent = "Add to cart";
+  // addToCartButton.addEventListener("click", () => {
+  // addToCartButton(jacket); function from cartmsj
+  // }) 
+
+  jacketInformationBox.append(jacketInformationHeaderAbout, jacketInformationParagraph, addToCartButton);
+  informationSection.append(jacketImageBox, jacketInformationBox);
 
   return informationSection;
 }
@@ -76,5 +88,3 @@ async function generateJacketHTML() {
 
 
 generateJacketHTML();
-
-{/* <button class="add-button">Add to cart</button> */ }

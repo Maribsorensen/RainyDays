@@ -13,7 +13,7 @@
     <title>Rainydays | Gear for a Greener Adventure</title>
     <link rel="icon" type="image/png" href="assets/images/logo-non.png" />
     <link rel="stylesheet" href="src/css/styles.css" />
-    <script src="script.js" type="module"></script>
+    <script src="../scripts/script.mjs" type="module"></script>
   </head>
   <body>
     <header>
@@ -73,7 +73,18 @@
           </a>
         </div>
       </section>
-      <section class="shop-page-content" id="product-cards-wrapper">
+      <div class="filter-menu">
+        <label for="genderFilter">Filter by gender:</label>
+        <select name="" id="genderFilter" class="filter-dropdown">
+          <option value="all">All</option>
+          <option value="Female">Women's</option>
+          <option value="Male">Men's</option>
+        </select>
+      </div>
+      <section
+        class="shop-page-content loading-indicator"
+        id="product-cards-wrapper"
+      >
         <!-- Product cards appended here -->
       </section>
       <section class="content-box-images">
