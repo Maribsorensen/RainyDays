@@ -6,9 +6,6 @@ export function showLoadingIndicator() {
     const loader = document.createElement('span');
     loader.classList.add('loader');
     indicator.appendChild(loader);
-    setTimeout(() => {
-      loader.remove(); // Remove the loader after a delay
-    }, 10000);
   });
 }
 

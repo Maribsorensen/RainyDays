@@ -1,3 +1,4 @@
+import { addToCart } from "./addToCart.mjs";
 import { fetchJackets } from "./utils/fetch.mjs";
 
 function getJacketId() {
@@ -66,9 +67,9 @@ function createJacketImageAndInformationSection(jacket) {
   const addToCartButton = document.createElement("button");
   addToCartButton.classList.add("add-button");
   addToCartButton.textContent = "Add to cart";
-  // addToCartButton.addEventListener("click", () => {
-  // addToCartButton(jacket); function from cartmsj
-  // }) 
+  addToCartButton.addEventListener("click", () => {
+    addToCart(jacket);
+  })
 
   jacketInformationBox.append(jacketInformationHeaderAbout, jacketInformationParagraph, addToCartButton);
   informationSection.append(jacketImageBox, jacketInformationBox);
@@ -81,7 +82,7 @@ async function generateJacketHTML() {
   const jacketHeaderSection = createJacketHeaderSection(jacket);
   const jacketImageAndInformationSection = createJacketImageAndInformationSection(jacket);
 
-  document.querySelector("main").appendChild(jacketHeaderSection);
+  document.querySelector("main").append(jacketHeaderSection, jacketImageAndInformationSection);
   document.querySelector("main").appendChild(jacketImageAndInformationSection);
 }
 

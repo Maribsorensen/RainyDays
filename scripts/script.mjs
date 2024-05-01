@@ -29,6 +29,7 @@ function createJacketCard(jacket) {
 
   const anchorTag = document.createElement("a");
   anchorTag.href = `product/index.html?id=${jacket.id}`;
+  anchorTag.className = "jacket-page-link";
 
   const imageUrl = jacket.image;
   const jacketImg = document.createElement("img");
