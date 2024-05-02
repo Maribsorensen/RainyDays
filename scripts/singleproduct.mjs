@@ -1,4 +1,5 @@
 import { addToCart } from "./addToCart.mjs";
+import { showPopup } from "./shared/popup.mjs";
 import { fetchJackets } from "./utils/fetch.mjs";
 
 function getJacketId() {
@@ -69,6 +70,7 @@ function createJacketImageAndInformationSection(jacket) {
   addToCartButton.textContent = "Add to cart";
   addToCartButton.addEventListener("click", () => {
     addToCart(jacket);
+    showPopup("Jacket added to cart!");
   })
 
   jacketInformationBox.append(jacketInformationHeaderAbout, jacketInformationParagraph, addToCartButton);

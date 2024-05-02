@@ -1,3 +1,4 @@
+import { getCartSubtotal } from "./cartpricecounter.mjs";
 
 
 function createCartMainBorder(jacket) {
@@ -92,7 +93,7 @@ function createCartSubtotalBorder(jackets) {
 
   const subtotalPrice = document.createElement("h5");
   subtotalPrice.className = "subtotal-price";
-  subtotalPrice.textContent = "test";
+  subtotalPrice.textContent = getCartSubtotal();
 
   subtotalBorder.appendChild(subtotal);
   subtotalBorder.appendChild(subtotalPrice);
