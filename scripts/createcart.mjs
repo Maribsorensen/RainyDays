@@ -19,24 +19,6 @@ function createCartMainBorder(jacket) {
   jacketTitle.className = "cart-content";
   jacketTitle.textContent = jacket.title;
 
-  // const quantityContainer = document.createElement("div");
-  // quantityContainer.className = "cart-qty";
-
-  // const minusButton = document.createElement("button");
-  // minusButton.textContent = "-";
-  // quantityContainer.appendChild(minusButton);
-
-  // const quantityInput = document.createElement("input");
-  // quantityInput.type = "number";
-  // quantityInput.value = "1";
-  // quantityInput.min = "1";
-  // quantityInput.max = "10";
-  // quantityContainer.appendChild(quantityInput);
-
-  // const plusButton = document.createElement("button");
-  // plusButton.textContent = "+";
-  // quantityContainer.appendChild(plusButton);
-
   const jacketPrice = document.createElement("h3");
   jacketPrice.className = "cart-price";
   jacketPrice.textContent = jacket.price;
@@ -51,30 +33,10 @@ function createCartMainBorder(jacket) {
 
   imageContainer.appendChild(jacketImg);
   cartInformation.appendChild(jacketTitle);
-  // cartInformation.appendChild(quantityContainer);
   cartInformation.appendChild(jacketPrice);
   cartInformation.appendChild(removeItemContainer);
   cartMainBorder.appendChild(imageContainer);
   cartMainBorder.appendChild(cartInformation);
-
-  // minusButton.addEventListener("click", () => {
-  //   if (parseInt(quantityInput.value) > 1) {
-  //     quantityInput.value = parseInt(quantityInput.value) - 1;
-  //     updateTotalPrice();
-  //   }
-  // });
-
-  // plusButton.addEventListener("click", () => {
-  //   if (parseInt(quantityInput.value) < 10) {
-  //     quantityInput.value = parseInt(quantityInput.value) + 1;
-  //     updateTotalPrice();
-  //   }
-  // });
-
-  // function updateTotalPrice() {
-  //   const totalPrice = parseInt(jacket.price) * parseInt(quantityInput.value);
-  //   jacketPrice.textContent = totalPrice.toFixed(2);
-  // }
 
   removeItemIcon.addEventListener("click", () => {
     removeFromCart(jacket);

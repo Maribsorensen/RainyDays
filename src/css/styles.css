@@ -389,7 +389,7 @@ fieldset {
   margin: 0 1rem 0 0.2rem;
 }
 .add-button {
-  width: 100%;
+  width: 40%;
   font-size: 1.8rem;
   padding: 0.5rem;
   margin-top: 0.5rem;
@@ -435,6 +435,9 @@ legend {
   .size-add-form {
     margin-top: 1rem;
     text-align: center;
+  }
+  .add-button {
+    width: 10%;
   }
 }
 
