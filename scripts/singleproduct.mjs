@@ -31,12 +31,12 @@ function createJacketHeaderSection(jacket) {
   jacketTopSection.appendChild(jacketTitle);
 
   const jacketGender = document.createElement("h2");
-  jacketGender.classList.add("gender");
+  jacketGender.className = "gender";
   jacketGender.textContent = jacket.gender;
   jacketTopSection.appendChild(jacketGender);
 
   const jacketPrice = document.createElement("h3");
-  jacketPrice.classList.add("price");
+  jacketPrice.className = "price";
   jacketPrice.textContent = jacket.price;
   jacketTopSection.appendChild(jacketPrice);
 
@@ -45,28 +45,28 @@ function createJacketHeaderSection(jacket) {
 
 function createJacketImageAndInformationSection(jacket) {
   const informationSection = document.createElement("section");
-  informationSection.classList.add("fridarunner-box");
+  informationSection.className = "fridarunner-box";
 
   const jacketImageBox = document.createElement("div");
-  jacketImageBox.classList.add("fridarunner-img-box");
+  jacketImageBox.className = "fridarunner-img-box";
   const jacketImage = document.createElement("img");
-  jacketImage.classList.add("fridarunner-img");
+  jacketImage.className = "fridarunner-img";
   jacketImage.src = jacket.image;
   jacketImageBox.appendChild(jacketImage);
 
   const jacketInformationBox = document.createElement("div");
-  jacketInformationBox.classList.add("fridarunner-information-box");
+  jacketInformationBox.className = "fridarunner-information-box";
 
   const jacketInformationHeaderAbout = document.createElement("h2");
-  jacketInformationHeaderAbout.classList.add("fr-headers");
+  jacketInformationHeaderAbout.className = "fr-headers";
   jacketInformationHeaderAbout.textContent = "About the jacket";
 
   const jacketInformationParagraph = document.createElement("p");
-  jacketInformationParagraph.classList.add("fridarunner-information");
+  jacketInformationParagraph.className = "fridarunner-information";
   jacketInformationParagraph.textContent = jacket.description;
 
   const addToCartButton = document.createElement("button");
-  addToCartButton.classList.add("add-button");
+  addToCartButton.className = "add-button";
   addToCartButton.textContent = "Add to cart";
   addToCartButton.addEventListener("click", () => {
     addToCart(jacket);
