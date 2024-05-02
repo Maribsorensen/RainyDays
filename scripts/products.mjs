@@ -2,7 +2,7 @@
 import { fetchJackets } from "./utils/fetch.mjs";
 
 
-async function displayJackets() {
+export async function displayJackets() {
   const data = await fetchJackets();
   renderJackets(data);
 }

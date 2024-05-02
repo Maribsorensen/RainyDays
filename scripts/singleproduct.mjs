@@ -79,7 +79,7 @@ function createJacketImageAndInformationSection(jacket) {
   return informationSection;
 }
 
-async function generateJacketHTML() {
+export async function generateJacketHTML() {
   const jacket = await fetchJacketInformation();
   const jacketHeaderSection = createJacketHeaderSection(jacket);
   const jacketImageAndInformationSection = createJacketImageAndInformationSection(jacket);
