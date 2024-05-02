@@ -19,23 +19,23 @@ function createCartMainBorder(jacket) {
   jacketTitle.className = "cart-content";
   jacketTitle.textContent = jacket.title;
 
-  const quantityContainer = document.createElement("div");
-  quantityContainer.className = "cart-qty";
+  // const quantityContainer = document.createElement("div");
+  // quantityContainer.className = "cart-qty";
 
-  const minusButton = document.createElement("button");
-  minusButton.textContent = "-";
-  quantityContainer.appendChild(minusButton);
+  // const minusButton = document.createElement("button");
+  // minusButton.textContent = "-";
+  // quantityContainer.appendChild(minusButton);
 
-  const quantityInput = document.createElement("input");
-  quantityInput.type = "number";
-  quantityInput.value = "1";
-  quantityInput.min = "1";
-  quantityInput.max = "10";
-  quantityContainer.appendChild(quantityInput);
+  // const quantityInput = document.createElement("input");
+  // quantityInput.type = "number";
+  // quantityInput.value = "1";
+  // quantityInput.min = "1";
+  // quantityInput.max = "10";
+  // quantityContainer.appendChild(quantityInput);
 
-  const plusButton = document.createElement("button");
-  plusButton.textContent = "+";
-  quantityContainer.appendChild(plusButton);
+  // const plusButton = document.createElement("button");
+  // plusButton.textContent = "+";
+  // quantityContainer.appendChild(plusButton);
 
   const jacketPrice = document.createElement("h3");
   jacketPrice.className = "cart-price";
@@ -51,30 +51,30 @@ function createCartMainBorder(jacket) {
 
   imageContainer.appendChild(jacketImg);
   cartInformation.appendChild(jacketTitle);
-  cartInformation.appendChild(quantityContainer);
+  // cartInformation.appendChild(quantityContainer);
   cartInformation.appendChild(jacketPrice);
   cartInformation.appendChild(removeItemContainer);
   cartMainBorder.appendChild(imageContainer);
   cartMainBorder.appendChild(cartInformation);
 
-  minusButton.addEventListener("click", () => {
-    if (parseInt(quantityInput.value) > 1) {
-      quantityInput.value = parseInt(quantityInput.value) - 1;
-      updateTotalPrice();
-    }
-  });
+  // minusButton.addEventListener("click", () => {
+  //   if (parseInt(quantityInput.value) > 1) {
+  //     quantityInput.value = parseInt(quantityInput.value) - 1;
+  //     updateTotalPrice();
+  //   }
+  // });
 
-  plusButton.addEventListener("click", () => {
-    if (parseInt(quantityInput.value) < 10) {
-      quantityInput.value = parseInt(quantityInput.value) + 1;
-      updateTotalPrice();
-    }
-  });
+  // plusButton.addEventListener("click", () => {
+  //   if (parseInt(quantityInput.value) < 10) {
+  //     quantityInput.value = parseInt(quantityInput.value) + 1;
+  //     updateTotalPrice();
+  //   }
+  // });
 
-  function updateTotalPrice() {
-    const totalPrice = parseInt(jacket.price) * parseInt(quantityInput.value);
-    jacketPrice.textContent = totalPrice.toFixed(2);
-  }
+  // function updateTotalPrice() {
+  //   const totalPrice = parseInt(jacket.price) * parseInt(quantityInput.value);
+  //   jacketPrice.textContent = totalPrice.toFixed(2);
+  // }
 
   removeItemIcon.addEventListener("click", () => {
     removeFromCart(jacket);
@@ -115,9 +115,19 @@ export function generateCartHTML() {
 }
 
 export function removeFromCart(jacketToRemove) {
-  let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
-  cartItems = cartItems.filter(jacket => jacket.id !== jacketToRemove.id);
-  localStorage.setItem("cart", JSON.stringify(cartItems));
+  let cartJackets = JSON.parse(localStorage.getItem("cart")) || [];
+  cartJackets = cartJackets.filter(jacket => jacket.id !== jacketToRemove.id);
+  localStorage.setItem("cart", JSON.stringify(cartJackets));
+
+  updateSubtotal();
 }
+
+function updateSubtotal() {
+  const subtotalPrice = document.querySelector(".subtotal-price");
+  if (subtotalPrice) {
+    subtotalPrice.textContent = getCartSubtotal();
+  }
+}
+
 
 generateCartHTML();
