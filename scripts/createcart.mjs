@@ -85,7 +85,7 @@ function createCartMainBorder(jacket) {
 
 function createCartSubtotalBorder(jackets) {
   const subtotalBorder = document.createElement("div");
-
+  subtotalBorder.className = "cart-border-subtotal"
   const subtotal = document.createElement("h4");
   subtotal.className = "subtotal";
   subtotal.textContent = "Subtotal";
