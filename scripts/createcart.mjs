@@ -1,4 +1,4 @@
-import { getCartSubtotal } from "./cartpricecounter.mjs";
+import { getCartSubtotal } from "./getCartSubtotal.mjs";
 
 
 function createCartMainBorder(jacket) {
@@ -21,7 +21,7 @@ function createCartMainBorder(jacket) {
 
   const jacketPrice = document.createElement("h3");
   jacketPrice.className = "cart-price";
-  jacketPrice.textContent = jacket.price;
+  jacketPrice.textContent = "€" + jacket.price;
 
   const removeItemContainer = document.createElement("div");
   removeItemContainer.className = "cart-remove";
@@ -55,7 +55,7 @@ function createCartSubtotalBorder(jackets) {
 
   const subtotalPrice = document.createElement("h5");
   subtotalPrice.className = "subtotal-price";
-  subtotalPrice.textContent = getCartSubtotal();
+  subtotalPrice.textContent = "€" + getCartSubtotal();
 
   subtotalBorder.appendChild(subtotal);
   subtotalBorder.appendChild(subtotalPrice);
@@ -91,5 +91,18 @@ function updateSubtotal() {
   }
 }
 
+function removeAllItemsFromLocalStorage() {
+  localStorage.clear();
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const confirmPurchaseButton = document.querySelector(".form-button");
+
+  if (confirmPurchaseButton) {
+    confirmPurchaseButton.addEventListener("click", function () {
+      removeAllItemsFromLocalStorage();
+    });
+  }
+});
 
 generateCartHTML();

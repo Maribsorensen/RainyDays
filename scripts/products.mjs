@@ -1,6 +1,6 @@
-// https://api.noroff.dev/api/v1/rainy-days
 import { fetchJackets } from "./utils/fetch.mjs";
-
+import { addToCart } from "./addToCart.mjs";
+import { showPopup } from "./shared/popup.mjs";
 
 export async function displayJackets() {
   const data = await fetchJackets();
@@ -45,11 +45,19 @@ function createJacketCard(jacket) {
 
   const jacketPrice = document.createElement("p");
   jacketPrice.className = "jacket-info-2";
-  jacketPrice.textContent = jacket.price;
+  jacketPrice.textContent = "€" + jacket.price;
   anchorTag.appendChild(jacketPrice);
 
-  jacketCard.appendChild(anchorTag);
+  const addToCartButton = document.createElement("button");
+  addToCartButton.className = "add-button";
+  addToCartButton.textContent = "Add to cart";
+  addToCartButton.addEventListener("click", () => {
+    addToCart(jacket);
+    showPopup("Jacket added to cart!");
+  })
 
+  jacketCard.appendChild(anchorTag);
+  jacketCard.appendChild(addToCartButton);
   return jacketCard;
 }
 

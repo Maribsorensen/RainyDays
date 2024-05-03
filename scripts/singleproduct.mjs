@@ -37,7 +37,7 @@ function createJacketHeaderSection(jacket) {
 
   const jacketPrice = document.createElement("h3");
   jacketPrice.className = "price";
-  jacketPrice.textContent = jacket.price;
+  jacketPrice.textContent = "€" + jacket.price;
   jacketTopSection.appendChild(jacketPrice);
 
   return jacketTopSection;
