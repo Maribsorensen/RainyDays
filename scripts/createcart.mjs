@@ -1,4 +1,4 @@
-import { getCartSubtotal } from "cartpricecounter.mjs";
+import { getCartSubtotal } from "./cartpricecounter.mjs";
 
 
 function createCartMainBorder(jacket) {
