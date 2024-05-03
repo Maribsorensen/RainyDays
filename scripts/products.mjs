@@ -1,5 +1,5 @@
 // https://api.noroff.dev/api/v1/rainy-days
-import { fetchJackets } from "./utils/fetch.mjs";
+import { fetchJackets } from "utils/fetch.mjs";
 
 
 export async function displayJackets() {

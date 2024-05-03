@@ -1,6 +1,6 @@
-import { addToCart } from "./addToCart.mjs";
-import { showPopup } from "./shared/popup.mjs";
-import { fetchJackets } from "./utils/fetch.mjs";
+import { addToCart } from "addToCart.mjs";
+import { showPopup } from "shared/popup.mjs";
+import { fetchJackets } from "utils/fetch.mjs";
 
 function getJacketId() {
   const urlParams = new URLSearchParams(window.location.search);
