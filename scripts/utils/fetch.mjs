@@ -1,5 +1,5 @@
 import { RAINY_DAYS_API_URL } from "../shared/constants.mjs";
-import { showLoadingIndicator, hideLoadingIndicator } from "../shared/loadingIndicator.mjs"
+import { showLoadingIndicator, hideLoadingIndicator } from "../shared/createLoadingIndicator.mjs";
 
 export async function fetchJackets() {
   showLoadingIndicator();
