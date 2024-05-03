@@ -1,4 +1,3 @@
-// https://cssloaders.github.io/
 
 export function showLoadingIndicator() {
   const loadingIndicators = document.querySelectorAll('.loading-indicator');
