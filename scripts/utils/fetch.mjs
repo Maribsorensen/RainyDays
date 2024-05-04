@@ -11,11 +11,11 @@ export async function fetchJackets() {
     return data;
   } catch (error) {
     console.error(error);
-    const errorMessageElement = document.createElement("p");
-    errorMessageElement.textContent = "Something went wrong, please try again later :(";
-    errorMessageElement.className = "error-msg";
+    const errorMessage = document.createElement("p");
+    errorMessage.textContent = "Something went wrong, please try again later :(";
+    errorMessage.className = "error-msg";
     const contentSection = document.getElementById("product-cards-wrapper");
-    contentSection.appendChild(errorMessageElement);
+    contentSection.appendChild(errorMessage);
   }
 }
 

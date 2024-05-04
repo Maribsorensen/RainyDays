@@ -1,3 +1,4 @@
+import { updateCartCounter } from "./shared/cartCounter.mjs";
 
 export function addToCart(jacket) {
   const cart = localStorage.getItem("cart");
@@ -10,6 +11,7 @@ export function addToCart(jacket) {
     newCart.push(jacket);
     localStorage.setItem("cart", JSON.stringify(newCart));
   }
+  updateCartCounter();
 }
 
 

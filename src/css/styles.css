@@ -32,8 +32,11 @@ nav a:hover {
   text-decoration: underline;
 }
 .cart-icon {
-  width: 45%;
+  width: 50%;
   height: auto;
+}
+.cart-counter {
+  font-size: 1rem;
 }
 .header-nav {
   min-height: 70px;
@@ -103,6 +106,9 @@ nav a:hover {
 }
 
 /*-----all-----*/
+main {
+  margin-top: 90px;
+}
 h1,
 h2,
 h3,

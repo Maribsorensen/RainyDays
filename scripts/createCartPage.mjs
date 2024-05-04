@@ -1,7 +1,8 @@
 import { getCartSubtotal } from "./getCartSubtotal.mjs";
+import { updateCartCounter } from "./shared/cartCounter.mjs";
 import { initializeHamburgerMenu } from "./shared/hamburgerMenu.mjs";
 
-
+// Create section that shows images, title, price and a remove icon, per jacket.
 function createCartMainBorder(jacket) {
   const cartMainBorder = document.createElement("div");
   cartMainBorder.className = "cart-border";
@@ -33,11 +34,8 @@ function createCartMainBorder(jacket) {
   removeItemContainer.appendChild(removeItemIcon);
 
   imageContainer.appendChild(jacketImg);
-  cartInformation.appendChild(jacketTitle);
-  cartInformation.appendChild(jacketPrice);
-  cartInformation.appendChild(removeItemContainer);
-  cartMainBorder.appendChild(imageContainer);
-  cartMainBorder.appendChild(cartInformation);
+  cartInformation.append(jacketTitle, jacketPrice, removeItemContainer);
+  cartMainBorder.append(imageContainer, cartInformation);
 
   removeItemIcon.addEventListener("click", () => {
     removeFromCart(jacket);
@@ -47,6 +45,7 @@ function createCartMainBorder(jacket) {
   return cartMainBorder;
 }
 
+// Creates the subtotal section showing total price of all jackets in the cart
 function createCartSubtotalBorder(jackets) {
   const subtotalBorder = document.createElement("div");
   subtotalBorder.className = "cart-border-subtotal"
@@ -58,12 +57,12 @@ function createCartSubtotalBorder(jackets) {
   subtotalPrice.className = "subtotal-price";
   subtotalPrice.textContent = "€" + getCartSubtotal();
 
-  subtotalBorder.appendChild(subtotal);
-  subtotalBorder.appendChild(subtotalPrice);
+  subtotalBorder.append(subtotal, subtotalPrice);
 
   return subtotalBorder;
 }
 
+// Generates the cart
 export function generateCartHTML() {
   const jackets = JSON.parse(localStorage.getItem("cart")) || [];
   const cartContainer = document.querySelector(".cart-container");
@@ -83,6 +82,7 @@ export function removeFromCart(jacketToRemove) {
   localStorage.setItem("cart", JSON.stringify(cartJackets));
 
   updateSubtotal();
+  updateCartCounter();
 }
 
 function updateSubtotal() {
@@ -96,6 +96,7 @@ function removeAllItemsFromLocalStorage() {
   localStorage.clear();
 }
 
+// Empties the cart when confirm purchase button is clicked
 document.addEventListener("DOMContentLoaded", function () {
   const confirmPurchaseButton = document.querySelector(".form-button");
 

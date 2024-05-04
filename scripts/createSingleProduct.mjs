@@ -8,6 +8,7 @@ function getJacketId() {
   return urlParams.get("id");
 }
 
+// Fetches the jacket and creates an error message if something went wrong
 async function fetchJacketInformation() {
   const jacketId = getJacketId();
   if (!jacketId) {
@@ -28,6 +29,7 @@ async function fetchJacketInformation() {
   }
 }
 
+// Creates the top section with title, gender and price
 function createJacketHeaderSection(jacket) {
   const jacketTopSection = document.createElement("section");
 
@@ -47,7 +49,7 @@ function createJacketHeaderSection(jacket) {
 
   return jacketTopSection;
 }
-
+// Creates the middle section with image, description and add to cart button
 function createJacketImageAndInformationSection(jacket) {
   const informationSection = document.createElement("section");
   informationSection.className = "fridarunner-box";
@@ -70,6 +72,7 @@ function createJacketImageAndInformationSection(jacket) {
   jacketInformationParagraph.className = "fridarunner-information";
   jacketInformationParagraph.textContent = jacket.description;
 
+  // Add to cart button with an event listener to give the user information
   const addToCartButton = document.createElement("button");
   addToCartButton.className = "add-button";
   addToCartButton.textContent = "Add to cart";
@@ -84,6 +87,7 @@ function createJacketImageAndInformationSection(jacket) {
   return informationSection;
 }
 
+// Generates the page with the create functions
 export async function generateJacketHTML() {
   const jacket = await fetchJacketInformation();
   const jacketHeaderSection = createJacketHeaderSection(jacket);
@@ -93,9 +97,6 @@ export async function generateJacketHTML() {
   document.querySelector("main").appendChild(jacketImageAndInformationSection);
 
 }
-
-
-
 
 generateJacketHTML();
 initializeHamburgerMenu();

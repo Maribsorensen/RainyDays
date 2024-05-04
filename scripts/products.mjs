@@ -4,18 +4,21 @@ import { showPopup } from "./shared/popup.mjs";
 import { initializeHamburgerMenu } from "./shared/hamburgerMenu.mjs";
 
 
+
 export async function displayJackets() {
   const data = await fetchJackets();
-  renderJackets(data);
+  generateJackets(data);
 }
+
 
 async function filterJacketsByGender(gender) {
   const data = await fetchJackets();
   const filteredData = data.filter((jacket) => jacket.gender === gender);
-  renderJackets(filteredData);
+  generateJackets(filteredData);
 }
 
-function renderJackets(jacketsData) {
+// Generates the create functions per jacket
+function generateJackets(jacketsData) {
   const jacketContainer = document.getElementById("product-cards-wrapper");
   jacketContainer.textContent = "";
 
@@ -25,6 +28,7 @@ function renderJackets(jacketsData) {
   });
 }
 
+// Creates the jacket card, with image, title and price, as well as an add to cart button
 function createJacketCard(jacket) {
   const jacketCard = document.createElement("div");
   jacketCard.className = "shop-page-boxes";
@@ -38,18 +42,18 @@ function createJacketCard(jacket) {
   jacketImg.className = "shop-jacket-img";
   jacketImg.src = imageUrl;
   jacketImg.alt = "test";
-  anchorTag.appendChild(jacketImg);
+
 
   const jacketTitle = document.createElement("h2");
   jacketTitle.className = "jacket-info-1";
   jacketTitle.textContent = jacket.title;
-  anchorTag.appendChild(jacketTitle);
+
 
   const jacketPrice = document.createElement("p");
   jacketPrice.className = "jacket-info-2";
   jacketPrice.textContent = "€" + jacket.price;
-  anchorTag.appendChild(jacketPrice);
 
+  // Add to cart button, with event listener and popup to give user information
   const addToCartButton = document.createElement("button");
   addToCartButton.className = "add-button";
   addToCartButton.textContent = "Add to cart";
@@ -58,11 +62,12 @@ function createJacketCard(jacket) {
     showPopup("Jacket added to cart!");
   })
 
-  jacketCard.appendChild(anchorTag);
-  jacketCard.appendChild(addToCartButton);
+  anchorTag.append(jacketImg, jacketTitle, jacketPrice);
+  jacketCard.append(anchorTag, addToCartButton);
   return jacketCard;
 }
 
+// Filter that checks what chosen in the drop down menu
 const genderFilterDropdown = document.getElementById("genderFilter");
 genderFilterDropdown.addEventListener("change", function () {
   const selectedGender = this.value;
