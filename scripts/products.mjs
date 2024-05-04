@@ -2,6 +2,7 @@ import { fetchJackets } from "./utils/fetch.mjs";
 import { addToCart } from "./addToCart.mjs";
 import { showPopup } from "./shared/popup.mjs";
 
+
 export async function displayJackets() {
   const data = await fetchJackets();
   renderJackets(data);

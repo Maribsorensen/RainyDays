@@ -2,14 +2,24 @@ import { RAINY_DAYS_API_URL } from "../shared/constants.mjs";
 import { showLoadingIndicator, hideLoadingIndicator } from "../shared/createLoadingIndicator.mjs";
 
 export async function fetchJackets() {
-  showLoadingIndicator();
   try {
     const response = await fetch(RAINY_DAYS_API_URL);
+    if (!response.ok) {
+      throw new Error("Failed to fetch jackets. Please try again later.");
+    }
     const data = await response.json();
-    hideLoadingIndicator();
     return data;
   } catch (error) {
-    console.log(error)
-    hideLoadingIndicator();
+    console.error(error);
+    const errorMessageElement = document.createElement("p");
+    errorMessageElement.textContent = "Something went wrong, please try again later :(";
+    errorMessageElement.className = "error-msg";
+    const contentSection = document.getElementById("product-cards-wrapper");
+    contentSection.appendChild(errorMessageElement);
   }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  showLoadingIndicator();
+  fetchJackets().finally(() => hideLoadingIndicator());
+});

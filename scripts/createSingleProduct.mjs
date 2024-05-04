@@ -19,6 +19,10 @@ async function fetchJacketInformation() {
     return specificJacket;
   } catch (error) {
     console.error("Error fetching jacket information:", error);
+    const errorMessageElement = document.createElement("p");
+    errorMessageElement.textContent = "Something went wrong, please try again later :(";
+    errorMessageElement.className = "error-msg";
+    document.main.appendChild(errorMessageElement);
     return null;
   }
 }
