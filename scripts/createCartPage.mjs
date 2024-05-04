@@ -1,4 +1,5 @@
 import { getCartSubtotal } from "./getCartSubtotal.mjs";
+import { initializeHamburgerMenu } from "./shared/hamburgerMenu.mjs";
 
 
 function createCartMainBorder(jacket) {
@@ -106,3 +107,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 generateCartHTML();
+initializeHamburgerMenu();

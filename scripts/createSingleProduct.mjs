@@ -1,4 +1,5 @@
 import { addToCart } from "./addToCart.mjs";
+import { initializeHamburgerMenu } from "./shared/hamburgerMenu.mjs";
 import { showPopup } from "./shared/popup.mjs";
 import { fetchJackets } from "./utils/fetch.mjs";
 
@@ -97,3 +98,4 @@ export async function generateJacketHTML() {
 
 
 generateJacketHTML();
+initializeHamburgerMenu();
