@@ -52,7 +52,7 @@ npm run start
 
 ## Contact
 
-[My LinkedIn page]([www.linkedin.com](https://no.linkedin.com/in/mari-berg-s%C3%B8rensen-b63425156))
+[My LinkedIn page](https://no.linkedin.com/in/mari-berg-s%C3%B8rensen-b63425156)
 
 ## Acknowledgments
 
