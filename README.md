@@ -26,7 +26,7 @@ User Stories
 
 ### Installing
 
-The website is hosted live on Github Pages. Instructions bellow for installing and running.
+The website is hosted live on Github Pages [here](https://maribsorensen.github.io/RainyDays/). Instructions bellow for installing and running.
 
 1. Clone the repo:
 
