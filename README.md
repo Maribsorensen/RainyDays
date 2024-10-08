@@ -1,6 +1,6 @@
 # RainyDays
 
-![image]()
+![image](assets/images/RainyDaysReadmeimg.png)
 
 This project was a cross course school project.  
 
