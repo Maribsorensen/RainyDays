@@ -6,7 +6,7 @@ This project was a cross course school project.
 
 ## Description
 
-The project was supposed to be a website for a fictional company selling products. The chosen company is called RainyDays and sells outdoor jackets. The website fetches information about these jackets from the schools API.
+The project was supposed to be a website for a fictional company selling products. The chosen company is called RainyDays and sells outdoor jackets. The website fetches information about these jackets from the schools API, generates dynamic product cards and has a functional shopping basket as well. This project was originally only a html and css project. After learning JavaScript we got the option to update one of out projects with JavaScript and I choose to upgrade RainyDays. 
 
 User Stories
 
